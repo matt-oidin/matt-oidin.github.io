@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="苦力网提供专业的零工兼职、劳务外包、临时工派遣及在线任务接单服务，安全便捷的找活平台，帮助用户高效匹配用工需求。">
+    <meta name="keywords" content="苦力网, 零工兼职, 临时工, 劳务派遣, 在线接单, 找活">
+    <title>苦力网-安全高效的零工兼职与劳务对接平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #f97316;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --border-color: #e2e8f0;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .grid {
+            display: grid;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-inner {
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            padding: 24px 0;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 3px 3px 0 0;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+            border: none;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: #eff6ff;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-sub);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-box {
+            background: white;
+            padding: 10px;
+            border-radius: 50px;
+            box-shadow: var(--shadow-md);
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            border: 1px solid var(--border-color);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 0 20px;
+            font-size: 16px;
+            border-radius: 50px 0 0 50px;
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .search-box button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: white;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        /* Categories */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .view-more {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .view-more:hover {
+            text-decoration: underline;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .cat-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .cat-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+        }
+
+        .cat-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .cat-name {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .cat-count {
+            font-size: 12px;
+            color: var(--text-sub);
+            margin-top: 4px;
+        }
+
+        /* Job List */
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .job-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .job-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .job-header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .job-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .job-tags {
+            display: flex;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background-color: #f1f5f9;
+            color: var(--text-sub);
+        }
+
+        .tag.urgent {
+            background-color: #fef2f2;
+            color: #ef4444;
+        }
+
+        .job-body {
+            padding: 0 20px 20px;
+        }
+
+        .job-info-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-sub);
+            margin-bottom: 8px;
+        }
+
+        .job-footer {
+            padding: 16px 20px;
+            background-color: #f8fafc;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .salary {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .salary small {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--text-sub);
+        }
+
+        /* Features */
+        .features {
+            background-color: #1e293b;
+            color: white;
+            padding: 80px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-item h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-item p {
+            color: #94a3b8;
+            font-size: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(90deg, var(--primary-color), #3b82f6);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: white;
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 20px;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: var(--text-sub);
+            font-size: 14px;
+            margin-top: 16px;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-sub);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                height: auto;
+                padding: 15px 0;
+            }
+            
+            nav {
+                display: none; /* Simplified mobile view */
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .job-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner flex items-center justify-between">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>苦力网</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">兼职分类</a></li>
+                    <li><a href="#">找活大厅</a></li>
+                    <li><a href="#">企业招聘</a></li>
+                    <li><a href="#">安全指南</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">注册账号</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>随时随地，轻松找活</h1>
+                <p>连接百万用工需求与灵活就业者，实名认证保障交易安全，极速匹配适合您的临时工作。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="输入职位关键词（如：搬运、配送、装修）...">
+                    <button>搜索职位</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>50万+</h3>
+                        <p>注册用户</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>12万+</h3>
+                        <p>有效岗位</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p>交易成功率</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24h</h3>
+                        <p>极速响应</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">热门兼职分类</h2>
+                    <a href="#" class="view-more">查看全部分类 &rarr;</a>
+                </div>
+                <div class="category-grid">
+                    <div class="cat-card">
+                        <span class="cat-icon">🚚</span>
+                        <div class="cat-name">配送搬运</div>
+                        <div class="cat-count">2,341 个职位</div>
+                    </div>
+                    <div class="cat-card">
+                        <span class="cat-icon">🏗️</span>
+                        <div class="cat-name">装修建筑</div>
+                        <div class="cat-count">1,892 个职位</div>
+                    </div>
+                    <div class="cat-card">
+                        <span class="cat-icon">📦</span>
+                        <div class="cat-name">仓储物流</div>
+                        <div class="cat-count">1,456 个职位</div>
+                    </div>
+                    <div class="cat-card">
+                        <span class="cat-icon">🛡️</span>
+                        <div class="cat-name">安保巡逻</div>
+                        <div class="cat-count">890 个职位</div>
+                    </div>
+                    <div class="cat-card">
+                        <span class="cat-icon">🧹</span>
+                        <div class="cat-name">家政保洁</div>
+                        <div class="cat-count">1,200 个职位</div>
+                    </div>
+                    <div class="cat-card">
+                        <span class="cat-icon">🤝</span>
+                        <div class="cat-name">活动兼职</div>
+                        <div class="cat-count">560 个职位</div>
+                    </div>
+                    <div class="cat-card">
+                        <span class="cat-icon">⚙️</span>
+                        <div class="cat-name">设备维修</div>
+                        <div class="cat-count">340 个职位</div>
+                    </div>
+                    <div class="cat-card">
+                        <span class="cat-icon">🚗</span>
+                        <div class="cat-name">网约车/代驾</div>
+                        <div class="cat-count">890 个职位</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Jobs -->
+        <section class="section" style="background-color: #f8fafc;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">最新急招职位</h2>
+                    <a href="#" class="view-more">发布需求 &rarr;</a>
+                </div>
+                <div class="job-grid">
+                    <!-- Job Card 1 -->
+                    <article class="job-card">
+                        <div class="job-header">
+                            <div>
+                                <h3 class="job-title">仓库临时理货员</h3>
+                                <div class="job-tags">
+                                    <span class="tag">日结</span>
+                                    <span class="tag">包午餐</span>
+                                </div>
+                            </div>
+                            <span class="tag urgent">急招</span>
+                        </div>
+                        <div class="job-body">
+                            <div class="job-info-row">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <span>北京市朝阳区物流园</span>
+                            </div>
+                            <div class="job-info-row">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span>工期：3天，可随时到岗</span>
+                            </div>
+                        </div>
+                        <div class="job-footer">
+                            <div class="salary">150<span>元/天</span></div>
+                            <a href="#" class="btn btn-outline" style="padding: 6px 16px; font-size: 13px;">接单</a>
+                        </div>
+                    </article>
+
+                    <!-- Job Card 2 -->
+                    <article class="job-card">
+                        <div class="job-header">
+                            <div>
+                                <h3 class="job-title">建筑工地杂工</h3>
+                                <div class="job-tags">
+                                    <span class="tag">月结</span>
+                                    <span class="tag">包住宿</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-body">
+                            <div class="job-info-row">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <span>上海市浦东新区工地</span>
+                            </div>
+                            <div class="job-info-row">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span>工期：长期，包吃住</span>
+                            </div>
+                        </div>
+                        <div class="job-footer">
+                            <div class="salary">400<span>元/天</span></div>
+                            <a href="#" class="btn btn-outline" style="padding: 6px 16px; font-size: 13px;">接单</a>
+                        </div>
+                    </article>
+
+                    <!-- Job Card 3 -->
+                    <article class="job-card">
+                        <div class="job-header">
+                            <div>
+                                <h3 class="job-title">商场促销导购</h3>
+                                <div class="job-tags">
+                                    <span class="tag">周末兼职</span>
+                                    <span class="tag">高提成</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-body">
+                            <div class="job-info-row">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <span>广州市天河区万达广场</span>
+                            </div>
+                            <div class="job-info-row">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span>工期：周末两天</span>
+                            </div>
+                        </div>
+                        <div class="job-footer">
+                            <div class="salary">120<span>元/天 + 提成</span></div>
+                            <a href="#" class="btn btn-outline" style="padding: 6px 16px; font-size: 13px;">接单</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3>🔒 实名认证保障</h3>
+                        <p>严格的用户身份审核机制，确保发布者和接单者身份真实可靠，杜绝虚假信息。</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>⚡ 极速匹配</h3>
+                        <p>基于地理位置和技能标签的智能算法，让您的需求在几分钟内直达合适的人选。</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>🛡️ 交易担保</h3>
+                        <p>平台提供资金托管服务，任务完成验收合格后自动打款，保障双方权益。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>想找活？想找人？</h2>
+                <p>立即注册，开启您的灵活就业之旅</p>
+                <a href="#" class="btn" style="background: white; color: var(--primary-color);">免费注册账号</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo" style="font-size: 20px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>苦力网</span>
+                    </a>
+                    <p>专注打造最安全、最高效的本地化零工兼职与劳务对接服务平台，连接每一个需要帮助的瞬间。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">平台介绍</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">新手指南</a></li>
+                        <li><a href="#">实名认证</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><a href="#">客服热线：400-123-4567</a></li>
+                        <li><a href="#">工作时间：8:00 - 22:00</a></li>
+                        <li><a href="#">商务合作：bd@kuliwang.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 苦力网 版权所有 | 仅供演示</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                                                   </html>
