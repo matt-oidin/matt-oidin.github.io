@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="爱妻网 - 专注夫妻情感沟通、婚姻经营与家庭关系维护的专业平台。提供婚姻咨询指南、夫妻相处技巧、情感升温方案及家庭和谐生活建议。">
+    <meta name="keywords" content="爱妻网,夫妻关系,婚姻经营,夫妻沟通技巧,家庭和谐,情感咨询">
+    <title>爱妻网-夫妻情感经营与家庭和谐指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d4a373;
+            --primary-hover: #b08968;
+            --secondary-color: #faedcd;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #fdfbf7;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbf7 0%, #f3e7e9 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            background: var(--white);
+            border-radius: 50px;
+            padding: 5px;
+            box-shadow: var(--shadow);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            outline: none;
+            border-radius: 50px 0 0 50px;
+        }
+
+        .search-box button {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Features */
+        .features {
+            padding: 60px 0;
+            background: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: box-shadow 0.3s;
+        }
+
+        .article-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .article-img {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 25px;
+        }
+
+        .article-tag {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: #8d6e63;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .article-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Interactive Guide */
+        .guide-section {
+            background-color: var(--white);
+        }
+
+        .guide-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .guide-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .guide-list {
+            margin-top: 30px;
+        }
+
+        .guide-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .guide-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .guide-text h4 {
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .guide-text p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .guide-visual {
+            flex: 1;
+            min-width: 300px;
+            background: #fdfbf7;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            border: 1px solid #eee;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-light);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 14px;
+            padding-left: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c2c2c;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none; /* Simplified for mobile */
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .search-box {
+                flex-direction: column;
+                border-radius: 12px;
+            }
+            .search-box input {
+                width: 100%;
+                border-radius: 8px 8px 0 0;
+                border-bottom: 1px solid #eee;
+            }
+            .search-box button {
+                width: 100%;
+                border-radius: 0 0 8px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span style="font-size: 28px;">❤</span> 爱妻网
+            </a>
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">情感咨询</a>
+                <a href="#">相处之道</a>
+                <a href="#">婚姻保鲜</a>
+                <a href="#">社区交流</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>让爱在婚姻中长久保鲜</h1>
+                <p>爱妻网致力于为夫妻提供专业的情感沟通指导、婚姻经营策略与家庭和谐解决方案，助您构建幸福美满的亲密关系。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="搜索夫妻相处技巧、沟通误区、婚姻咨询...">
+                    <button>搜索</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3>深度沟通</h3>
+                        <p>学习非暴力沟通技巧，打破沉默坚冰，建立心灵桥梁。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>关系维护</h3>
+                        <p>提供婚姻危机干预与日常关系维护的科学方法。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <h3>情感升温</h3>
+                        <p>探索浪漫约会创意与增进亲密感的实用方案。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👨‍👩‍👧</div>
+                        <h3>家庭和谐</h3>
+                        <p>平衡工作与家庭，处理婆媳关系与育儿分歧。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>热门情感指南</h2>
+                    <p>精选夫妻关系经营文章，解决您在婚姻中遇到的困惑</p>
+                </div>
+                <div class="article-grid">
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/marriage1/400/250" alt="夫妻沟通" class="article-img">
+                        <div class="article-content">
+                            <span class="article-tag">沟通技巧</span>
+                            <h3 class="article-title">夫妻争吵后的冷处理：是逃避还是修复？</h3>
+                            <p class="article-excerpt">争吵是婚姻的常态，但如何处理争吵后的情绪至关重要。本文将探讨冷处理的利弊及正确的修复步骤。</p>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/marriage2/400/250" alt="婚姻经营" class="article-img">
+                        <div class="article-content">
+                            <span class="article-tag">经营策略</span>
+                            <h3 class="article-title">婚姻进入平淡期？试试这5个“破冰”行动</h3>
+                            <p class="article-excerpt">七年之痒并非不可逾越。通过共同参与新活动、重温恋爱细节，可以有效打破生活僵局。</p>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/marriage3/400/250" alt="家庭关系" class="article-img">
+                        <div class="article-content">
+                            <span class="article-tag">家庭关系</span>
+                            <h3 class="article-title">如何优雅地处理婆媳关系，维护家庭平衡</h3>
+                            <p class="article-excerpt">婆媳关系是婚姻中的隐形考验。掌握界限感与尊重原则，是构建和谐家庭环境的关键。</p>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Guide Section -->
+        <section class="section guide-section">
+            <div class="container">
+                <div class="guide-container">
+                    <div class="guide-content">
+                        <div class="section-title" style="text-align: left;">
+                            <h2>高效沟通三部曲</h2>
+                            <p>掌握正确的表达方式，让爱意被准确接收</p>
+                        </div>
+                        <div class="guide-list">
+                            <div class="guide-item">
+                                <div class="guide-number">1</div>
+                                <div class="guide-text">
+                                    <h4>先处理情绪，再处理事情</h4>
+                                    <p>当对方情绪激动时，不要急于讲道理。先倾听，确认对方的感受，待双方冷静后再进行理性讨论。</p>
+                                </div>
+                            </div>
+                            <div class="guide-item">
+                                <div class="guide-number">2</div>
+                                <div class="guide-text">
+                                    <h4>使用“我”字句表达需求</h4>
+                                    <p>避免指责性的“你总是...”，改用“我感到...我希望...”的句式，降低对方的防御心理。</p>
+                                </div>
+                            </div>
+                            <div class="guide-item">
+                                <div class="guide-number">3</div>
+                                <div class="guide-text">
+                                    <h4>定期进行深度谈话</h4>
+                                    <p>每周抽出固定时间，抛开琐事，只聊彼此的感受、梦想和担忧，保持情感链接的紧密。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-visual">
+                        <img src="https://picsum.photos/seed/couple/600/500" alt="夫妻温馨互动" style="width: 100%; border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section faq-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于婚姻经营与夫妻关系的疑问汇总</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">❓ 婚姻出现裂痕还能修复吗？</div>
+                        <div class="faq-answer">婚姻是可以修复的。修复的前提是双方都有改变的意愿。通过专业的沟通训练和心理咨询，绝大多数关系裂痕都能得到不同程度的弥合。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">❓ 异地恋如何维持亲密关系？</div>
+                        <div class="faq-answer">异地恋需要更高的信任度和沟通频率。建议每天固定视频通话，分享生活细节，并共同制定见面的计划，给彼此一个期待。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">❓ 伴侣总是不回信息怎么办？</div>
+                        <div class="faq-answer">首先排除对方正在忙的可能性。如果频繁发生，建议在情绪平和时沟通，表达你的不安，而不是指责对方忽视你。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">❓ 如何给婚姻生活增加仪式感？</div>
+                        <div class="faq-answer">仪式感不在于花费多少金钱。可以是一句晚安、一份小礼物、一顿共同准备的晚餐，或者每年的纪念日旅行，关键是用心。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于爱妻网</h4>
+                    <p style="font-size: 14px; line-height: 1.8;">爱妻网是一个专注于夫妻情感健康与家庭和谐发展的公益性质平台。我们致力于传播正确的婚姻观，帮助每一对夫妻在漫长的岁月中找到相处的智慧。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>核心栏目</h4>
+                    <ul>
+                        <li><a href="#">情感咨询</a></li>
+                        <li><a href="#">相处技巧</a></li>
+                        <li><a href="#">婚姻危机</a></li>
+                        <li><a href="#">两性心理</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">使用指南</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>订阅我们</h4>
+                    <p style="font-size: 14px; margin-bottom: 10px;">获取每日情感小贴士</p>
+                    <div style="display: flex; gap: 5px;">
+                        <input type="email" placeholder="您的邮箱" style="padding: 8px; border: none; border-radius: 4px; flex: 1;">
+                        <button style="padding: 8px 15px; background: var(--primary-color); border: none; color: white; border-radius: 4px; cursor: pointer;">订阅</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 爱妻网 版权所有 | 专注于夫妻情感经营与家庭和谐</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
