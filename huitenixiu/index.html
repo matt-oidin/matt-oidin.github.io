@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="惠特尼休斯顿成名曲 - 全面介绍惠特尼休斯顿最经典的音乐作品，包括《I Will Always Love You》、《Greatest Love of All》等代表歌曲的背景、歌词赏析及演唱技巧分析。">
+    <meta name="keywords" content="惠特尼休斯顿, 成名曲, I Will Always Love You, Greatest Love of All, 惠特尼休斯顿成名曲">
+    <title>惠特尼休斯顿成名曲 - 经典代表作与音乐赏析指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #c41230; /* Classic Whitney Red/Pink vibe */
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: var(--spacing-unit);
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .section-desc {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1516280440614-6697288d5d38?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #a00d28;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        /* Main Content Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+
+        /* Featured Songs Section */
+        .featured-section {
+            margin-bottom: 60px;
+        }
+
+        .song-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .song-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .song-title h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .song-meta {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+        }
+
+        .song-play-btn {
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .song-play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .song-body {
+            padding: 20px;
+        }
+
+        .song-body p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .lyrics-preview {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-left: 4px solid var(--accent-color);
+            margin-top: 20px;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        /* Sidebar */
+        aside {
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+        }
+
+        .sidebar-widget {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .sidebar-widget h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .chart-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chart-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rank {
+            font-weight: 700;
+            color: var(--accent-color);
+            width: 30px;
+        }
+
+        .song-info-mini {
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        .song-name {
+            font-weight: 600;
+            display: block;
+        }
+
+        .album-name {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Career Timeline */
+        .timeline-section {
+            background-color: white;
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #eee;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--accent-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .content h3 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .content .year {
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h5 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #bbb;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            .left::after, .right::after {
+                left: 21px;
+            }
+
+            .right {
+                left: 0%;
+            }
+
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">Whitney<span>Music</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">成名曲</a></li>
+                    <li><a href="#">音乐专辑</a></li>
+                    <li><a href="#">生平传记</a></li>
+                    <li><a href="#">粉丝社区</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>惠特尼休斯顿成名曲</h1>
+            <p>探索这位“流行音乐天后”如何通过几首传世经典，定义了80年代乃至整个流行音乐的历史。从《I Will Always Love You》到《Greatest Love of All》，聆听灵魂的共鸣。</p>
+            <button class="btn">开始聆听</button>
+            <button class="btn btn-outline">阅读赏析</button>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <div class="main-grid">
+            <!-- Left Column: Content -->
+            <div class="content-area">
+                
+                <section class="featured-section">
+                    <h2 class="section-title">经典成名曲详解</h2>
+                    <p class="section-desc">惠特尼·休斯顿的嗓音具有极高的辨识度，强有力的高音与细腻的情感表达相结合，使其成名曲成为了无数歌手模仿的对象。</p>
+
+                    <!-- Song 1 -->
+                    <article class="song-card">
+                        <div class="song-header">
+                            <div class="song-title">
+                                <h3>I Will Always Love You</h3>
+                                <span class="song-meta">电影《保镖》主题曲 · 发行于1992年</span>
+                            </div>
+                            <a href="#" class="song-play-btn" aria-label="播放歌曲">▶</a>
+                        </div>
+                        <div class="song-body">
+                            <p>这首歌是惠特尼休斯顿最广为人知的成名曲，最初创作于1974年，由Dolly Parton演唱。惠特尼在1992年为电影《保镖》翻唱此曲，瞬间席卷全球。歌曲旋律优美，情感真挚，尤其是副歌部分那震撼人心的高音，展示了她无与伦比的声乐技巧。这首歌不仅打破了多项销售纪录，更成为了跨越时代的爱情绝唱。</p>
+                            <div class="lyrics-preview">
+                                "And I... I will always love you"
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Song 2 -->
+                    <article class="song-card">
+                        <div class="song-header">
+                            <div class="song-title">
+                                <h3>Greatest Love of All</h3>
+                                <span class="song-meta">同名电影主题曲 · 发行于1986年</span>
+                            </div>
+                            <a href="#" class="song-play-btn" aria-label="播放歌曲">▶</a>
+                        </div>
+                        <div class="song-body">
+                            <p>作为惠特尼早期的代表作之一，《Greatest Love of All》传递了积极向上的人生态度。歌词鼓励人们要相信自己、珍惜未来。这首歌在Billboard Hot 100榜单上停留了数周，并成为了她的第三首冠军单曲。惠特尼在这首歌中的演绎冷静而充满力量，展现了歌后成熟的舞台魅力。</p>
+                        </div>
+                    </article>
+
+                    <!-- Song 3 -->
+                    <article class="song-card">
+                        <div class="song-header">
+                            <div class="song-title">
+                                <h3>I Wanna Dance with Somebody</h3>
+                                <span class="song-meta">首张同名专辑主打歌 · 发行于1987年</span>
+                            </div>
+                            <a href="#" class="song-play-btn" aria-label="播放歌曲">▶</a>
+                        </div>
+                        <div class="song-body">
+                            <p>这首歌标志着惠特尼从R&B天后向流行巨星的华丽转型。充满活力的节奏和朗朗上口的歌词，使其成为了80年代的舞曲经典。这首歌不仅确立了她在全球范围内的知名度，更证明了她在流行音乐领域的统治力。每当这首歌响起，人们都会被那种纯粹的快乐和热情所感染。</p>
+                        </div>
+                    </article>
+
+                </section>
+
+                <!-- Timeline Section -->
+                <section class="timeline-section">
+                    <h2 class="section-title">音乐生涯里程碑</h2>
+                    <div class="timeline">
+                        <div class="timeline-item left">
+                            <div class="content">
+                                <h3>出道与首张专辑</h3>
+                                <span class="year">1985</span>
+                                <p>发行首张同名专辑《Whitney Houston》，创下史上首张专辑销量最高的女歌手纪录，横扫格莱美奖。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item right">
+                            <div class="content">
+                                <h3>《保镖》电影上映</h3>
+                                <span class="year">1992</span>
+                                <p>主演电影《保镖》上映，同名主题曲《I Will Always Love You》成为全球现象级单曲。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item left">
+                            <div class="content">
+                                <h3>全球巡演</h3>
+                                <span class="year">1993</span>
+                                <p>开启世界巡回演唱会，其惊人的现场高音和舞台表现力征服了世界各地的观众。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item right">
+                            <div class="content">
+                                <h3>音乐遗产</h3>
+                                <span class="year">2021</span>
+                                <p>入选《滚石》杂志史上最伟大歌手前五名，其音乐作品被后世无数艺术家传唱。</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Column: Sidebar -->
+            <aside>
+                <!-- Top Charts Widget -->
+                <div class="sidebar-widget">
+                    <h4>热门成名曲榜单</h4>
+                    <ul class="chart-list">
+                        <li>
+                            <span class="rank">1</span>
+                            <div class="song-info-mini">
+                                <span class="song-name">I Will Always Love You</span>
+                                <span class="album-name">The Bodyguard OST</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank">2</span>
+                            <div class="song-info-mini">
+                                <span class="song-name">I Wanna Dance with Somebody</span>
+                                <span class="album-name">Whitney Houston</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank">3</span>
+                            <div class="song-info-mini">
+                                <span class="song-name">Greatest Love of All</span>
+                                <span class="album-name">Whitney Houston</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank">4</span>
+                            <div class="song-info-mini">
+                                <span class="song-name">I'm Your Baby Tonight</span>
+                                <span class="album-name">Whitney Houston</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank">5</span>
+                            <div class="song-info-mini">
+                                <span class="song-name">How Will I Know</span>
+                                <span class="album-name">Whitney Houston</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Tips Widget -->
+                <div class="sidebar-widget">
+                    <h4>声乐技巧赏析</h4>
+                    <p style="font-size: 0.9rem; color: #666;">
+                        惠特尼休斯顿的成名曲之所以经久不衰，在于她将<strong>技巧与情感</strong>完美融合。在演唱《I Will Always Love You》时，她不仅展现了惊人的音域跨度，更通过气息控制将歌词中的不舍与释怀表现得淋漓尽致。
+                    </p>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>关于惠特尼</h5>
+                    <p style="color: #bbb; font-size: 0.9rem;">
+                        本站致力于收录和介绍惠特尼·休斯顿的经典音乐作品与生平资料，为乐迷提供最全面的资料库。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h5>热门栏目</h5>
+                    <ul>
+                        <li><a href="#">I Will Always Love You</a></li>
+                        <li><a href="#">Greatest Love of All</a></li>
+                        <li><a href="#">Whitney Houston 演唱会</a></li>
+                        <li><a href="#">Dolly Parton 创作</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>相关资源</h5>
+                    <ul>
+                        <li><a href="#">格莱美获奖记录</a></li>
+                        <li><a href="#">电影《保镖》解析</a></li>
+                        <li><a href="#">经典MV回顾</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Whitney Houston Music Guide. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
