@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你好吗 我很好 - 情感交流与心理健康互助平台</title>
+    <meta name="description" content="你好吗 我很好 是一个专注于现代人际沟通与心理健康支持的平台。提供情感疏导、压力管理技巧及真实故事分享，帮助您在快节奏生活中找到内心的平静与连接。">
+    <meta name="keywords" content="你好吗 我很好, 心理健康, 情感咨询, 压力缓解, 人际关系, 治愈系">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --primary-dark: #357abd;
+            --secondary-color: #f5f7fa;
+            --text-main: #2c3e50;
+            --text-light: #7f8c8d;
+            --accent-color: #e67e22;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--secondary-color);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e0f7fa 0%, #e8eaf6 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Interaction Section */
+        .interaction {
+            background-color: var(--white);
+            padding: 80px 0;
+        }
+
+        .interaction-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .interaction-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .interaction-text p {
+            margin-bottom: 30px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .interaction-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .check-icon {
+            color: var(--primary-color);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .interaction-visual {
+            background-color: var(--secondary-color);
+            border-radius: var(--radius);
+            padding: 40px;
+            position: relative;
+        }
+
+        .message-box {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .message-box::before {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid var(--white);
+        }
+
+        .message-box p {
+            font-style: italic;
+            color: var(--text-main);
+        }
+
+        .message-box strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .typing-indicator {
+            display: flex;
+            gap: 5px;
+            padding: 10px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+        .dot:nth-child(1) { animation-delay: -0.32s; }
+        .dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 60px 0;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .interaction-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .interaction-visual {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <span>你好吗 我很好</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#features" class="active">功能</a></li>
+                    <li><a href="#story">故事</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#start" class="cta-button">开始倾诉</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>你好吗？<br><span class="highlight">我很好。</span></h1>
+                <p>在这个快节奏的时代，我们习惯了坚强，却往往忽略了内心的声音。在这里，我们用真诚的对话和专业的支持，帮您卸下伪装，找回真实的自己。</p>
+                <div class="hero-actions">
+                    <a href="#interaction" class="cta-button">匿名交流</a>
+                    <a href="#guide" class="btn-secondary">阅读指南</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>关注心理健康，从“你好吗”开始</h2>
+                    <p>我们提供多维度的支持，让您在需要时能够被理解、被接纳。</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <span class="feature-icon">💬</span>
+                        <h3>树洞倾诉</h3>
+                        <p>在这里，您可以将无法对亲友言说的烦恼、焦虑或秘密匿名发送给树洞。每一个故事都会得到尊重与守护。</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">🧘</span>
+                        <h3>情绪日记</h3>
+                        <p>记录每日的心情波动，通过科学的日记模板，帮助您识别情绪模式，掌握自我调节的主动权。</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">🤝</span>
+                        <h3>互助小组</h3>
+                        <p>加入与您有相似经历的小组，在同伴的鼓励中找到共鸣。您不再是孤单的个体，而是一个温暖的集体的一部分。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="interaction" class="interaction">
+            <div class="container interaction-layout">
+                <div class="interaction-text">
+                    <h2>我们相信真实的连接</h2>
+                    <p>很多人在微信上回复“我很好”，但内心却在经历风暴。我们的目标不是要求您时刻保持积极，而是提供一个安全的容器，容纳您的所有情绪。</p>
+                    <ul class="interaction-list">
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>严格的匿名保护机制，无需担心隐私泄露。</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>专业的心理咨询师团队提供定期督导与建议。</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>温暖包容的社区氛围，拒绝评判与说教。</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="interaction-visual">
+                    <div class="message-box">
+                        <strong>用户 A</strong>
+                        <p>其实，最近工作压力特别大，每天回家只想躺平，连和父母视频都怕他们担心，只能发句“我挺好的”。</p>
+                    </div>
+                    <div class="message-box">
+                        <strong>用户 B</strong>
+                        <p>我懂这种感觉。有时候说“我很好”不是因为真的没事，而是不想成为别人的负担。谢谢你的分享，你并不孤单。</p>
+                    </div>
+                    <div class="typing-indicator">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="guide" class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>如何正确地表达“我很好”？</h2>
+                    <p>了解不同语境下的表达方式，让沟通更有效。</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <h3>职场场景</h3>
+                        <p>在职场中，适度的表达可以展示自信。例如：“目前项目进展顺利，我正在全力推进中。” 这既传达了积极信号，也暗示了当前的工作状态。</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>家庭场景</h3>
+                        <p>对家人说“我很好”是一种保护，但偶尔的脆弱能增进亲密感。试着说：“我很好，只是最近有点累，想听听你的声音。”</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>自我关怀</h3>
+                        <p>学会自我对话。当您说“我很好”时，请确信这是基于对自己状态的客观评估，而不是一种逃避责任的借口。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">这里的交流是匿名的吗？</div>
+                        <div class="faq-answer">是的，我们非常重视您的隐私。您可以使用昵称发布内容，系统会自动隐藏您的真实身份信息，除非您选择主动公开。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如果遇到严重的心理困扰该怎么办？</div>
+                        <div class="faq-answer">我们提供初步的支持，但如果您感到痛苦无法承受，请务必寻求专业医生或当地心理援助热线（如希望24热线：400-161-9995）的帮助。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何加入互助小组？</div>
+                        <div class="faq-answer">您可以根据兴趣标签搜索相关小组，或者在我们的首页填写简单的兴趣问卷，系统会为您推荐合适的小组。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于你好吗 我很好</h4>
+                    <p style="color: #bdc3c7; font-size: 0.9rem;">
+                        致力于打造一个温暖、包容、安全的心理健康互助社区。我们相信每一次真诚的“你好吗”背后，都藏着一段需要被看见的故事。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">树洞倾诉</a></li>
+                        <li><a href="#">小组社区</a></li>
+                        <li><a href="#">心理测试</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助与支持</h4>
+                    <ul>
+                        <li><a href="#">使用指南</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 你好吗 我很好. 保留所有权利. 本网站内容仅供参考，不构成医疗建议。
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他已打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
