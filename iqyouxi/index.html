@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IQ游戏-益智挑战与逻辑思维训练平台</title>
+    <meta name="description" content="IQ游戏平台提供海量高难度益智谜题、逻辑思维训练游戏及解谜攻略，适合全年龄段挑战大脑极限，提升观察力与推理能力。">
+    <meta name="keywords" content="IQ游戏,益智游戏,逻辑思维,解谜,脑筋急转弯,火柴人游戏,数独">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --primary-hover: #4f46e5;
+            --secondary-color: #ec4899;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --border-color: #e2e8f0;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-sub);
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e0e7ff 0%, #fae8ff 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-sub);
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-main);
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .section-more {
+            color: var(--primary-color);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .section-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-image {
+            height: 180px;
+            background-color: #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .game-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .difficulty-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-sub);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+
+        .play-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .play-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .tags span {
+            font-size: 12px;
+            color: var(--text-sub);
+            background-color: #f1f5f9;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 50px;
+            margin-bottom: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #e0e7ff;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-text h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .feature-text p {
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        .feature-visual {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            border-radius: var(--radius-lg);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .feature-visual::after {
+            content: "🧠";
+            font-size: 100px;
+            opacity: 0.8;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            border-radius: var(--radius-md);
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-main);
+            background-color: var(--card-bg);
+        }
+
+        .faq-question:hover {
+            background-color: #f8fafc;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: var(--text-sub);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 200px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #334155;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 15px;
+            }
+            
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                padding: 30px;
+            }
+
+            .feature-visual {
+                height: 200px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path>
+                    <path d="M12 6v6l4 2"></path>
+                </svg>
+                <span>IQ游戏</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">益智游戏</a></li>
+                    <li><a href="#">逻辑训练</a></li>
+                    <li><a href="#">排行榜</a></li>
+                    <li><a href="#">攻略专区</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-primary">开始挑战</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <h1>激活你的大脑潜能<br>挑战极限思维</h1>
+            <p>汇集全球精选益智谜题与逻辑游戏，从火柴人解谜到数独挑战，在这里找到属于你的智力乐趣。</p>
+            <button class="btn btn-primary" style="padding: 12px 30px; font-size: 16px;">立即游玩</button>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">精选谜题</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50万+</span>
+                    <span class="stat-label">活跃玩家</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4.9</span>
+                    <span class="stat-label">用户评分</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- 热门推荐 -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">本周热门</h2>
+                <a href="#" class="section-more">查看全部 ></a>
+            </div>
+            <div class="game-grid">
+                <article class="game-card">
+                    <div class="card-image">
+                        <span class="difficulty-badge">难度: 中等</span>
+                        <!-- 使用picsum作为占位图，实际开发应替换为游戏截图 -->
+                        <img src="https://picsum.photos/seed/iq1/400/300" alt="火柴人逻辑谜题">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">火柴人逻辑谜题</h3>
+                        <p class="card-desc">通过移动火柴棍来改变图形的形状或算式，考验你的观察力与逻辑推理能力。</p>
+                        <div class="card-footer">
+                            <div class="tags">
+                                <span>益智</span>
+                                <span>解谜</span>
+                            </div>
+                            <a href="#" class="play-btn">开始游戏</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="game-card">
+                    <div class="card-image">
+                        <span class="difficulty-badge">难度: 困难</span>
+                        <img src="https://picsum.photos/seed/iq2/400/300" alt="数字华容道">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">经典数字华容道</h3>
+                        <p class="card-desc">还原1到15的数字顺序，不仅是手速的考验，更是对空间排列思维的挑战。</p>
+                        <div class="card-footer">
+                            <div class="tags">
+                                <span>休闲</span>
+                                <span>数字</span>
+                            </div>
+                            <a href="#" class="play-btn">开始游戏</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="game-card">
+                    <div class="card-image">
+                        <span class="difficulty-badge">难度: 简单</span>
+                        <img src="https://picsum.photos/seed/iq3/400/300" alt="迷宫逃脱">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">迷宫逃脱挑战</h3>
+                        <p class="card-desc">在错综复杂的迷宫中找到出口，锻炼方向感与短期记忆能力。</p>
+                        <div class="card-footer">
+                            <div class="tags">
+                                <span>迷宫</span>
+                                <span>冒险</span>
+                            </div>
+                            <a href="#" class="play-btn">开始游戏</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="game-card">
+                    <div class="card-image">
+                        <span class="difficulty-badge">难度: 极难</span>
+                        <img src="https://picsum.photos/seed/iq4/400/300" alt="找不同">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">双重视觉找不同</h3>
+                        <p class="card-desc">在高度相似的图片中找出细微差异，提升专注力与细节捕捉能力。</p>
+                        <div class="card-footer">
+                            <div class="tags">
+                                <span>观察</span>
+                                <span>眼力</span>
+                            </div>
+                            <a href="#" class="play-btn">开始游戏</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 益智优势介绍 -->
+        <section class="features">
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-icon">🧩</div>
+                    <div class="feature-text">
+                        <h3>多维度的思维训练</h3>
+                        <p>涵盖逻辑推理、空间想象、数学计算及反应速度，全方位提升大脑机能。</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-text">
+                        <h3>循序渐进的难度曲线</h3>
+                        <p>从入门级的脑筋急转弯到高阶的编程思维游戏，适合各年龄段玩家。</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🏆</div>
+                    <div class="feature-text">
+                        <h3>实时排行榜与成就系统</h3>
+                        <p>记录你的解题时间与步数，与全球玩家一较高下，解锁专属成就徽章。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-visual">
+                <!-- 装饰性背景 -->
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section class="faq-section">
+            <div class="section-header">
+                <h2 class="section-title">常见问题解答</h2>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    IQ游戏适合什么年龄段的玩家？
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    我们的IQ游戏库非常丰富，从简单的图形观察游戏（适合儿童和老人）到复杂的逻辑推理游戏（适合大学生和职场人士）都有涵盖。建议家长根据孩子的认知能力选择适合的难度等级。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    如何提升我的解谜速度？
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    提升解谜速度主要依靠多练习和掌握通用的逻辑思维模型。建议先从简单的火柴人谜题开始熟悉规则，逐步挑战更复杂的关卡，同时学习查看攻略中的解题技巧。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    游戏数据会丢失吗？
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    我们采用本地存储与云端同步相结合的方式。只要您保持登录状态，您的通关记录和成就徽章都会自动保存在服务器上，更换设备后登录即可继续游戏。
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>IQ游戏</h2>
+                <p>致力于提供最纯粹、最有趣的益智娱乐体验，让大脑在游戏中焕发活力。</p>
+            </div>
+            <div class="footer-col">
+                <h4>游戏分类</h4>
+                <ul>
+                    <li><a href="#">火柴人解谜</a></li>
+                    <li><a href="#">数独挑战</a></li>
+                    <li><a href="#">迷宫逃脱</a></li>
+                    <li><a href="#">图形推理</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">新手指南</a></li>
+                    <li><a href="#">常见问题</a></li>
+                    <li><a href="#">联系客服</a></li>
+                    <li><a href="#">意见反馈</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">公司简介</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">服务条款</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 IQ游戏平台 版权所有. 本站内容仅供学习交流使用。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他已打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
